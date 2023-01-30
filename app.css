@@ -1,10 +1,58 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 html{
     box-sizing: border-box;
-    font-family: 'Open-Sans',sans-serif;
+    font-family: 'Open Sans',sans-serif;
 }
 
 body{
-    margin: 0px;
     background-color: #60a9ff;
     display: flex;
     justify-content: center;
@@ -25,14 +73,15 @@ body{
 }
 
 .pricing-plan{
-    border-right: solid 1px #e1f1ff;
+    border-right: solid 2px #e1f1ff;
+    padding: 25px 50px;
 }
 .pricing-plan:last-child{
     border-right: none;
 }
 
 img{
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     max-width: 100%;
 }
 
@@ -44,9 +93,8 @@ h2{
 
 ul{
     list-style:none;
-    margin: 30px 45px 25px 0px;
+    margin: 50px 0px;
     color:#016ff9;
-    font-size: 12px;
 }
 
 li{
@@ -54,8 +102,12 @@ li{
     letter-spacing: 1px;
     font-size: 12px;
     padding:15px 0px;
-    border-top: 1px solid #e1f1ff;
+    border-top: 2px solid #e1f1ff;
     line-height: 1.5;
+}
+
+li:last-child{
+    border-bottom: 2px solid #e1f1ff;
 }
 
 span{
@@ -71,14 +123,28 @@ a{
     text-decoration: none;
     margin: 12px;
     border: 1px solid #9dd1ff;
-    border-radius: 3px;
+    border-radius: 10px;
     padding: 15px 30px;
     transition: all 200ms ease-in-out;
 }
 
 a:hover {
+    border-radius: 12px;
     background-color: #016ff9;
     color: white;
     transform: scale(.97);
+}
+
+@media(max-width:900px){
+    .main{
+        flex-direction: column;
+    }
+    .pricing-plan{
+        border-right: none;
+        border-bottom: solid 2px #e1f1ff;
+    }
+    .pricing-plan:last-child{
+        border-bottom: none;
+    }
 }
 
